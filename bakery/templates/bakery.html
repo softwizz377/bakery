@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<html>
+<head>
+<title>My home page</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet"/>
+<link href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}" type="text/css" rel="stylesheet" />
+<link href="{% static 'style1.css' %}" type="text/css" rel="stylesheet"/>
+</head><body>
+<div class="row" id="header">
+<div class="col-md-8">
+<h2><b>PICO</b></h2>
+</div>
+<div class="col-md-4">
+<nav class="nav navbar-nav" id="nav">
+<ul class ="nav navbar-nav"> 
+<li><a href="#">About us</a></li> 
+<li><a href="#">Services</a></li> 
+<li><a href="#">Products</a></li>
+<li><a href="#">Offer</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Contects</a></li>
+</ul>
+</nav>
+</div> 
+</div>
+<div class "row" id="content">
+<h2 style="font-size:40px;"> Introducing<b> Pico.</b></h2>
+<p>A stupidly simple <span class="red">& </span> blazing fast,flat files CMS. Making web easly</P>
+<button class="btn btn-primary">download now</button>
+</div>
+<div class="row" id="tagline">
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-thumbs-up"></h2></span>
+<h3>stupidly simple</h3>
+<p>A web page design by me in the python language,which simple to used.</p>
+</div>
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-pencil"></h2></span>
+<h3>blazing fast</h3>
+<p>A web page design by me in the python language,which simple to used.</p>
+</div>
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-thumbs-up"></h2></span>
+<h3>no database</h3>
+<p>A web page design by me in the python language,which simple to used.</p>
+<p>Nothing</P>
+</div>
+</div>
+<div class="row" id="subcontant">
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-pencil"></h2></span>
+<h3>Markdown formatting</h3>
+<p>A web page design by me in the python language,which simple to used.</p>
+<p>Formatting</p>
+</div>
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-time"></h2></span>
+<h3>twig template</h3>
+<p>A web page design by me in the python language,which simple to used.</p>
+</div>
+<div class="col-md-4">
+<h2><span class="glyphicon glyphicon-time"></h2></span>
+<h3>open source</h3>
+<p>A web page design by me in the python language</p>
+<p>which simple to used.</p>
+</div>
+</div>
+<div class="row" id="footer">
+<div class="col-md-12">
+<h2><b>want to contribute</b></h2>
+<h5>Help pico better by<span class="red">checking out</span>The gilbert parle</h5>
+<h5> i am girl </h5>
+<img src="{% static 'download.JFIF'%}" height="30" width="25" class="img-circle"/>
+<img src="{% static 'download.JFIF'%}" height="30" width="25" class="img-circle"/>
+<span class="glyphicon glyphicon-fa"></span>
+<span class="glyphicon glyphicon-twiter"></span>
+</div>
+</div>
+</body>
+</html>

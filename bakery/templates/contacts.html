@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row" id="image1">
+<div class="col-md-6">
+<img src="{% static 'p1.PNG' %}" height="600" width="550"/>
+</div>
+<div class="row" id="image">
+<div class="col-md-5">
+<!-----?query string get-->
+<form enctype="multipart/form-data" action="/insertcontact/" method="post">
+{% csrf_token %}
+<h1><b>CONTACT US<b></h1>
+<br>
+<label>Name</label>
+<input type="text" class="form-control" placeholder="Enter your Name" pattern="[A-z a-z]*" required name="name" />
+<label>Phone no.</label>
+<input type="tel" class="form-control" placeholder="Enter your phone no." pattern="[6|7|8|9][0-9]{9}" required name="phone" />
+
+<label>E-mail</label>
+<input type="email" class="form-control" name="email" />
+<label>Message</label>
+<input type="text" class="form-control"  required name="message" />
+<br>
+<input type="submit" class="btn btn-success" value="Send"/>
+</form>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

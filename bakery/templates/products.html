@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row" id="product">
+<h1><b>PRODUCTS</b></h1></span>
+</div>
+<div class="row" id="product1">
+
+{% for category in cat %}
+<div class="col-md-12">
+<h1 style="background:#fff;">{{ category }}<h1>
+{% for subcat in category.products.all %}
+<div class="col-md-3">
+<img src="/media/{{ subcat.pick }}" height="300" width="100%"/>
+<h3>{{ subcat.name }}</h3>
+<p>Rs. {{ subcat.price }}</p>
+<form action="{% url "cart:cart_add" subcat.id %}" method="post">
+                                {% csrf_token %}
+                                {{ cart_product_form }}
+                                <input type="submit" value="add to cart" class="btn btn-primary">
+                            </form>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+
+<!--<h1>1.CUPCAKES<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'cc17.JPEG' %}" height="300" width="300"/>
+<h3><b>Vanilla Cupcake</span></h3>
+<p>Rs. 150</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'cc14.JPG' %}" height="300" width="300"/>
+<h3><b>Creamy Cupcake</span></h3>
+<p> Rs. 80</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'cc4.JFIF' %}" height="300" width="300"/>
+<h3><b>Strawberry Cupcake</span></h3>
+<p>Rs.120</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'cc6.JFIF' %}" height="300" width="300"/><br>
+<h3><b>Chocolate Cupcake</h3>
+<p>Rs.180</p></b>
+<br></div><br>
+
+
+<h1>2.DELICIOUS CAKES<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'bf.JFIF' %}" height="300" width="300"/>
+<h3><b>Blackforest Cake</span></h3>
+<p>Rs. 300</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'vc.JFIF' %}" height="300" width="300"/>
+<h3><b>Vanilla Cake</span></h3>
+<p>Rs. 400</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'sc.JFIF' %}" height="300" width="300"/>
+<h3><b>Strawberry Cake</span></h3>
+<p>Rs.450</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'ck.JFIF' %}" height="300" width="300"/><br>
+<h3><b>Chocolate Cake</span></h3>
+<p>Rs.500</p></b>
+<br></div><br>
+
+
+<h1>3.PESTRY CAKES<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'bp.JPG' %}" height="300" width="300"/>
+<h3><b>Blackforest Cake</span></h3>
+<p>Rs. 50</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'vanilla.JPG' %}" height="300" width="300"/>
+<h3><b>Vanilla Cake</span></h3>
+<p> Rs. 20</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'sp.JPG' %}" height="300" width="300"/>
+<h3><b>Strawberry Cake</span></h3>
+<p>Rs.60</p></b>
+</div>
+<div class="row">
+<div class="col-md-3"><br>
+<img src="{% static 'ch1.JPG' %}" height="300" width="300"/><br>
+<h3><b>Chocolate Cake</span></h3>
+<p>Rs. 30</p>
+<br></div><br>
+
+<div class="col-md-12" id="product2">
+<h1>4.PESTRY PUFF<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'Creamy.JPG' %}" height="300" width="300"/>
+<h3><b>Creamy Puff</span></h3>
+<p>Rs. 40</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'puff2.JFIF' %}" height="300" width="300"/>
+<h3><b>Vanilla Puff</span></h3>
+<p>Rs. 50</p></b>
+
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'puffs.JPG' %}" height="300" width="300"/>
+<h3><b>Strawberry Puff</span></h3>
+<p>Rs.70</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'chok1.JFIF' %}" height="300" width="300"/><br>
+<h3><b>Chocolate Puff</span></h3>
+<p>Rs. 55</p>
+<br></div><br>
+</div>
+
+
+
+<h1>5.DELICIOUS BUNS<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'bun5.JPG' %}" height="300" width="280"/>
+<h3><b>Sweet Bun</span></h3>
+<p>Rs. 20</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'bun3.JPG' %}" height="300" width="300"/>
+<h3><b>Tea Bun</span></h3>
+<p> Rs. 10</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'bun4.JPG' %}" height="300" width="300"/>
+<h3><b>Burger Bun</span></h3>
+<p>Rs.40</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'bun.JPG' %}" height="300" width="280"/><br>
+<h3><b>Bread Bun</span></h3>
+<p>Rs. 30</p>
+<br></div><br>
+
+<h1>6.DELICIOUS PIZZAS<h1></span>
+<div class="col-md-3"><br>
+<img src="{% static 'cornpiza.JPG' %}" height="300" width="280"/>
+<h3><b>Corn Pizza</span></h3>
+<p>Rs. 100</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'vegpiza.JPG' %}" height="300" width="300"/>
+<h3><b>Veg Pizza</span></h3>
+<p> Rs. 200</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'chilipiza.JPG' %}" height="300" width="300"/>
+<h3><b>Chilli Pizza</span></h3>
+<p>Rs.250</p></b>
+</div>
+<div class="col-md-3"><br>
+<img src="{% static 'piza.JPG' %}" height="300" width="280"/><br>
+<h3><b>cheese Pizza</span></h3>
+<p>Rs. 300</p>
+</div>
+</div>
+</div>-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
